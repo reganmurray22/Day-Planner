@@ -3,26 +3,30 @@ $(document).ready(function() {
   // get times from moment
   const now = moment().format('MMMM Do YYYY');
 
+  let nowHour24 = moment().format('H');
+  let nowHour12 = moment().format('h');
+
   let $dateHeading = $('#currentDay');
   $dateHeading.text(now);
 
 
-  // Get stored todos from localStorage
+  // Get stored events from localStorage
   // Parsing the JSON string to an object
   let storedPlans = JSON.parse(localStorage.getItem("storedPlans"));
 
   if (storedPlans !== null) {
     plannerData = storedPlans;
-  } 
+  } else {
+    plannerData = new Array(9)
+  }
 
-  /*// set variable referencing planner element
+ 
   let $plannerDiv = $('#plannerContainer');
-  // clear existing elements
-  $plannerDiv.empty();*/
+  $plannerDiv.empty();
 
 
   // build calendar by row for fix set of hours
-  for (let hour = 9; hour <= 17; hour++) {
+  for (let hour = 9; hour <= 18; hour++) {
     // index for array use offset from hour
     let index = hour - 9;
     
@@ -51,15 +55,15 @@ $(document).ready(function() {
     }
 
     // populate time block with time
-    $timeBlock.text("${displayHour} ${ampm}");
+    $timeBlock.text(`${displayHour} ${ampm}`);
 
     $rowDiv.append($col2TimeDiv);
     $col2TimeDiv.append($timeBlock);
 
 
     // event input portion of row
-    let $col9IptDiv = $('<div>');
-    $col9IptDiv.addClass('col-md-9');
+    let $col8IptDiv = $('<div>');
+    $col8IptDiv.addClass('col-md-9');
 
     let $dailyEvent = $('<input>');
 
@@ -71,13 +75,13 @@ $(document).ready(function() {
     // access index from data array for hour 
     $dailyEvent.val( plannerData[index] );
     
-    $rowDiv.append($col9IptDiv);
-    $col9IptDiv.append($dailyEvent);
+    $rowDiv.append($col8IptDiv);
+    $col8IptDiv.append($dailyEvent);
  
 
     // START building save portion of row
-    let $col1SaveDiv = $('<div>');
-    $col1SaveDiv.addClass('col-md-1');
+    let $col2SaveDiv = $('<div>');
+    $col2SaveDiv.addClass('col-md-1');
 
     let $saveBtn = $('<i>');
     $saveBtn.attr('id',`saveid-${index}`);
@@ -85,8 +89,8 @@ $(document).ready(function() {
     $saveBtn.attr('class',"far fa-save saveIcon");
     
 
-    $rowDiv.append($col1SaveDiv);
-    $col1SaveDiv.append($saveBtn);
+    $rowDiv.append($col2SaveDiv);
+    $col2SaveDiv.append($saveBtn);
 
     // set row color based on past, present, future
     changeRowColor($rowDiv, hour);
@@ -99,9 +103,9 @@ $(document).ready(function() {
     if ( hour < nowHour24) {
       $hourRow.addClass("past")
     } else if ( hour > nowHour24) {
-      $hourRow.addClass("present")
-    } else {
       $hourRow.addClass("future")
+    } else {
+      $hourRow.addClass("present")
     }
   };
 

@@ -4,36 +4,16 @@ body {
   line-height: 1;
 }
 
-textarea{
-  background: transparent;
-  border: none;
-  resize: none;
-  color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
-}
-
 .jumbotron {
   text-align: center;
   background-color: transparent;
   color: black;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 10px;
 }
 
-.description{
-  white-space: pre-wrap;
-}
 
-.col-2{
-    padding: 0;
-}
-
-.col-9{
-    padding: 0;
-}
-
- .col-1{
+.col-2, .col-8 {
     padding: 0;
 }
 
@@ -44,7 +24,7 @@ textarea{
     font-size: 10px;
     line-height: 1.5;
     border-radius: 15px;  
-    border-top: 2px solid white;
+    border: 2px solid white;
 }
 
 .time-block{
@@ -57,14 +37,18 @@ textarea{
     display: inline-block;
     background-color: white;
 }
-
+ 
 .dailyEvent {
     color: black;  
-    font-size: 10px;
+    font-size: 15px;
     height:100%;
     width: 100%;
+    background: transparent;
+    border: none;
+    padding-left: 3px;
 }
-  .saveIcon {
+
+.saveIcon {
     background-color: darkturquoise;
     color:white;
     border-radius: 0px 15px 15px 0px;
@@ -72,7 +56,7 @@ textarea{
     width: 100%;
     height: 100%;
     text-align: center;
-  }
+}
 
 
 .past {
@@ -103,17 +87,3 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
-  /* media query for screen size to be applied to center text to switch at same time as navbar */
- /* @media (max-width: 768px)
-
-    .plannerRow {
-      height: 100%;
-      border-radius: 10;
-      margin: 10px;
-    }
-  
-    .saveIcon { border-radius: 0 0 15px 15px;
-     }
-  
-    .timeBox { border-radius: 15px 15px 0 0; }
-    }*/
