@@ -26,7 +26,7 @@ $(document).ready(function() {
 
 
   // build calendar by row for fix set of hours
-  for (let hour = 9; hour <= 18; hour++) {
+  for (let hour = 9; hour <= 17; hour++) {
     // index for array use offset from hour
     let index = hour - 9;
     

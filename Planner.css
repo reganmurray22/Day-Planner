@@ -1,22 +1,29 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  line-height: 1;
+  background-image: url(olive-branch.jpg);
+  text-align: center;
 }
 
-.jumbotron {
-  text-align: center;
-  background-color: transparent;
-  color: black;
+.container {
+  background: transparent;
   border-radius: 0;
   border-bottom: 10px;
 }
-
+.header {
+  justify-content: space-around;
+}
+.lead {
+    font-size: 15px;
+    background-color: ivory; 
+    color: black;  
+    padding: 10px;
+    border-radius: 15px;
+  }
 
 .plannerRow {
     height: 50px;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    margin-top: 4px;
+    margin-bottom: 4px;
     font-size: 10px;
     line-height: 1.5;
     border-radius: 15px;  
@@ -24,6 +31,7 @@ body {
 }
 
 .time-block{
+    vertical-align: middle;
     text-align: center;
     font-size: 15px; 
     font-weight: bold;
@@ -44,18 +52,18 @@ body {
 }
 
 .saveIcon {
-    background-color: darkturquoise;
+    background-color: rgb(71, 80, 73);
     color:white;
-    border-radius: 0px 15px 15px 0px;
-    font-size: 15px;
+    border-radius: 2px 15px 15px 0px;
+    font-size: 20px;
     width: 100%;
     height: 100%;
     text-align: center;
+    vertical-align: middle;
 }
 
-
 .past {
-  background-color :grey;
+  background-color :lightgray;
   color: white;
 }
 
@@ -65,19 +73,27 @@ body {
 }
 
 .future {
-  background-color: #77dd77;
+  background-color:   rgb(81, 107, 87);
   color: white;
 }
 
-.saveBtn {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #06AED5;
-  color: white;
-}
 
-.saveBtn:hover {
+.saveIcon:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+@media (max-width: 768px) {
+  .plannerRow {
+    height: 100%;
+    border-radius: 10px;
+    margin: 10px;
+  }
+
+  .saveIcon { 
+    border-radius: 0 0 15px 15px; 
+  }
+
+  .time-block { 
+    border-radius: 15px 15px 0 0; 
+  }
 }

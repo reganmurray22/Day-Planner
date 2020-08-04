@@ -23,12 +23,17 @@
   </head>
 
   <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
+    <header>      
+      <h1 class = "display-3">Work Day Scheduler</h1>
+      <div class = "row header" >
+        <section class = "col-md-6 lead">
+          <p>A simple calendar app for scheduling your work day</p>
+          <p id="currentDay"></p>
+        </section>
+      </div>
     </header>
-    <form id="formPlanner">
+    
+    <form>
 
       <div class="container" id="plannerContainer">
           <!-- Timeblocks go here -->
@@ -36,8 +41,6 @@
       </div>   
 
       </form>
-
-    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
