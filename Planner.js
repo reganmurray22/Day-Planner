@@ -48,10 +48,10 @@ $(document).ready(function() {
     let ampm = "";
     if (hour > 12) { 
       displayHour = hour - 12;
-      ampm = "pm";
+      ampm = "PM";
     } else {
       displayHour = hour;
-      ampm = "am";
+      ampm = "AM";
     }
 
     // populate time block with time

@@ -12,6 +12,7 @@ body {
 .header {
   justify-content: space-around;
 }
+
 .lead {
     font-size: 15px;
     background-color: ivory; 
@@ -49,6 +50,7 @@ body {
     height:100%;
     width: 100%;
     border: none;
+    background: transparent;
 }
 
 .saveIcon {
@@ -79,9 +81,11 @@ body {
 
 
 .saveIcon:hover {
+  cursor: pointer;
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
 @media (max-width: 768px) {
   .plannerRow {
     height: 100%;
