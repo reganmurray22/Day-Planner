@@ -63,7 +63,7 @@ $(document).ready(function() {
 
     // event input portion of row
     let $col8IptDiv = $('<div>');
-    $col8IptDiv.addClass('col-md-9');
+    $col8IptDiv.addClass('col-md-8');
 
     let $dailyEvent = $('<input>');
 
@@ -81,7 +81,7 @@ $(document).ready(function() {
 
     // START building save portion of row
     let $col2SaveDiv = $('<div>');
-    $col2SaveDiv.addClass('col-md-1');
+    $col2SaveDiv.addClass('col-md-2');
 
     let $saveBtn = $('<i>');
     $saveBtn.attr('id',`saveid-${index}`);
