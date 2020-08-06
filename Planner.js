@@ -79,12 +79,11 @@ $(document).ready(function() {
     $col8IptDiv.append($dailyEvent);
  
 
-    // START building save portion of row
+    // create save buttons
     let $col2SaveDiv = $('<div>');
     $col2SaveDiv.addClass('col-md-2');
 
     let $saveBtn = $('<i>');
-    $saveBtn.attr('id',`saveid-${index}`);
     $saveBtn.attr('save-id',index);
     $saveBtn.attr('class',"far fa-save saveIcon");
     
@@ -120,6 +119,10 @@ $(document).ready(function() {
     let $value = $(inputId).val();
 
     plannerData[$index] = $value;
+
+    console.log($index);
+    console.log(inputId);
+    console.log($value);
 
     localStorage.setItem("storedPlans", JSON.stringify(plannerData));
   });  
